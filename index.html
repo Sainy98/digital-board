@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>white board </title>
+</head>
+
+<body id="body">
+    <canvas id="canvas">
+    </canvas>
+    <button id="bt" onclick="ct()" class="fa fa-list">
+        <!-- <i class="fa fa-gear fa-spin" style="font-size:24px"></i> -->
+    </button>
+    <span>
+
+        <div id="div1">
+            <input oninput="ct1=this.value" type="color" id="picker">
+            <button id="save" onclick="save()">save</button>
+        </div>
+    </span>
+    <div id='tool'>
+        <button onclick="cl()" type="btn" class="fa">&#xf00d;</button>
+
+
+        <button onclick="colour()" id="btn" type="btn" class="fa fa-eraser"></button>
+        <div onclick="change_colour(this)" id="color" style="background: black;"></div>
+        <div onclick="change_colour(this)" id="color" style="background: blue;"></div>
+        <div onclick="change_colour(this)" id="color" style="background: red;"></div>
+        <div onclick="change_colour(this)" id="color" style="background: green;"></div>
+        <input oninput="draw_color= this.value" type="color" id="picker" value="white">
+        <input oninput="draw_width= this.value" type="range" id="range" min='1' max='100' value="2">
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
