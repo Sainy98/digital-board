@@ -54,6 +54,7 @@ function cl() {
     context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+
 canvas.addEventListener('touchstart', start, false);
 canvas.addEventListener('mousedown', start, false);
 canvas.addEventListener('touchmove', draw, false);
@@ -61,6 +62,7 @@ canvas.addEventListener('mousemove', draw, false);
 
 canvas.addEventListener('touchend', stop, false);
 canvas.addEventListener('mouseup', stop, false);
+canvas.addEventListener('touchcancel', stop, false);
 canvas.addEventListener('mouseout', stop, false);
 
 function start(event) {
