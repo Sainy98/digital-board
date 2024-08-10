@@ -100,23 +100,10 @@ const canvas = document.getElementById('drawingCanvas');
             redoHistory =[];
         })
 
-        function resizeCanvas() {
-            const tempCanvas = document.createElement('canvas');
-            const tempCtx = tempCanvas.getContext('2d');
-        
-            tempCanvas.width = canvas.width;
-            tempCanvas.height = canvas.height;
-        
-            // Copy the old content to the temporary canvas
-            tempCtx.drawImage(canvas, 0, 0);
-        
-            // Resize the canvas
+        window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            // Redraw content if needed
+        });
         
-            // Redraw the old content onto the resized canvas
-            ctx.drawImage(tempCanvas, 0, 0);
-        }
-        
-        window.addEventListener('resize', resizeCanvas);
         
