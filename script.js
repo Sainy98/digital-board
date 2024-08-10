@@ -8,6 +8,19 @@ const canvas = document.getElementById('drawingCanvas');
         let drawingHistory = [];
         let redoHistory = [];
 
+         // Resize the canvas to fit the window
+         function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight - document.querySelector('.tool-container').offsetHeight;
+            if (drawingHistory.length > 0) {
+                ctx.putImageData(drawingHistory[drawingHistory.length - 1], 0, 0);
+            }
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+
         function startDrawing(x, y) {
             isDrawing = true;
             [lastX, lastY] = [x, y];
@@ -98,12 +111,7 @@ const canvas = document.getElementById('drawingCanvas');
             ctx.clearRect(0,0, canvas.width, canvas.height);
             drawingHistory = [];
             redoHistory =[];
-        })
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            // Redraw content if needed
         });
+      
         
         
