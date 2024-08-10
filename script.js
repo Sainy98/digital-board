@@ -112,6 +112,19 @@ const canvas = document.getElementById('drawingCanvas');
             drawingHistory = [];
             redoHistory =[];
         });
+
+        document.querySelectorAll('.color-picker').forEach(colorPicker => {
+            colorPicker.addEventListener('click', (e) => {
+                currentColor = e.target.style.backgroundColor;
+        
+                // Remove the active class from all color pickers
+                document.querySelectorAll('.color-picker').forEach(cp => cp.classList.remove('active'));
+        
+                // Add the active class to the clicked color picker
+                e.target.classList.add('active');
+            });
+        });
+        
       
         
         

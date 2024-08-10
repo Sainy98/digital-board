@@ -11,6 +11,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   user-select: none;
+  cursor: cell;
 }
 
 .canvas-container {
@@ -21,6 +22,10 @@ body {
 
 
 }
+.color-picker.active {
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px #000000; /* Example of a white border with a black outer border */
+}
+
 
 canvas {
   width: 100%; /* Full width */
